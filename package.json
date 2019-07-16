@@ -31,8 +31,10 @@
   },
   "repository": "christroutner/bch-stack-monitor2",
   "dependencies": {
+    "@chris.troutner/bch-js": "^1.4.1",
     "apidoc": "^0.17.7",
     "bcryptjs": "^2.4.3",
+    "bitbox-sdk": "^8.4.2",
     "glob": "^7.0.0",
     "jsonwebtoken": "^8.3.0",
     "kcors": "^2.2.1",
@@ -49,13 +51,15 @@
     "passport-local": "^1.0.0",
     "request": "^2.85.0",
     "request-promise": "^4.2.2",
+    "shelljs": "^0.8.3",
+    "slp-sdk": "^4.5.0",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^3.9.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "coveralls": "^3.0.2",
-    "eslint": "^6.0.0",
+    "eslint": "5.16.0",
     "eslint-config-promise": "^2.0.0",
     "eslint-config-standard": "^13.0.1",
     "eslint-plugin-import": "^2.14.0",

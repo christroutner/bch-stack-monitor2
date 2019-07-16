@@ -13,12 +13,12 @@ const PERIOD = 60000 * 60 * 1 // 1 hr
 const GARBAGE_PERIOD = 60000 * 60 * 24 // 1 day
 // const GARBAGE_PERIOD = 60000 * 60 * 4 // 4 hours
 
-const utils = require('./lib/util')
+const utils = require('./util')
 
-const BCHAPI = require('./lib/bch-api-mainnet')
+const BCHAPI = require('./bch-api-mainnet')
 const bchapi = new BCHAPI()
 
-const REST = require('./lib/rest-api-mainnet')
+const REST = require('./rest-api-mainnet')
 const rest = new REST()
 
 const TimeLanguage = 'en-US'

@@ -17,7 +17,7 @@ const errorMiddleware = require('../src/middleware')
 const wlogger = require('../src/lib/wlogger')
 
 // Application specific libraries
-const testManager = require('./src/lib/test-manager')
+const testManager = require('../src/lib/test-manager')
 
 async function startServer () {
   // Create a Koa instance.
