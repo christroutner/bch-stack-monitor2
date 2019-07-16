@@ -63,7 +63,7 @@ database/
 system-user-*.json
 
 # Specific to bch-health-monitor
-uut/
+#uut/
 private/
 html/logs/*
 bkup/*
