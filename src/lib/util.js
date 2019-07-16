@@ -26,7 +26,7 @@ function clearLogs () {
       1}-${now.getDate()}-${now.getHours()}-${now.getMinutes()}`
 
     // Backup the logs.
-    shell.mv(`${__dirname}/../../html/logs`, `${__dirname}/../bkup/${datestamp}`)
+    shell.mv(`${__dirname}/../../html/logs`, `${__dirname}/../../bkup/${datestamp}`)
 
     shell.mkdir(`${__dirname}/../../html/logs`)
     shell.mkdir(`${__dirname}/../../html/logs/bch-api`)

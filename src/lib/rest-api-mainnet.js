@@ -22,7 +22,7 @@ const util = require('util')
 util.inspect.defaultOptions = { depth: 1 }
 
 class Tests {
-  constructor () {}
+  // constructor () {}
 
   // Parent function called by the BVT.
   async runTests () {
@@ -38,7 +38,9 @@ class Tests {
   localLog (str) {
     try {
       shell.cd(`${__dirname}`)
-      shell.exec(`echo "${str}" >> ${__dirname}/../html/logs/rest/mainnet.txt`)
+      shell.exec(
+        `echo "${str}" >> ${__dirname}/../../html/logs/rest/mainnet.txt`
+      )
     } catch (err) {
       console.log(`Error in rest-api-mainnet.js/localLog(): `)
       throw err
@@ -50,7 +52,7 @@ class Tests {
       // Spice token ID.
       const tokenId = `4de69e374a8ed21cbddd47f2338cc0f479dc58daa2bbe11cd604ca488eca0ddf`
 
-      const result = await slpsdk.Utils.list(tokenId)
+      await slpsdk.Utils.list(tokenId)
 
       await utils.logAll(`SLP: PASSED`)
     } catch (err) {

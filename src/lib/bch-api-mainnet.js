@@ -48,7 +48,7 @@ class Tests {
       // Spice token ID.
       const tokenId = `4de69e374a8ed21cbddd47f2338cc0f479dc58daa2bbe11cd604ca488eca0ddf`
 
-      const result = await bchjs.SLP.Utils.list(tokenId)
+      await bchjs.SLP.Utils.list(tokenId)
 
       await utils.logAll(`SLP: PASSED`)
     } catch (err) {

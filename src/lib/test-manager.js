@@ -46,7 +46,7 @@ async function runTests () {
     await utils.logAll(` `)
 
     await utils.logAll(`rest.bitcoin.com tests:`)
-    // await rest.runTests()
+    await rest.runTests()
 
     // Signal the tests have completed.
     const endTime = new Date()
