@@ -63,7 +63,10 @@ database/
 system-user-*.json
 
 # Specific to bch-health-monitor
-#uut/
+uut/
 private/
 html/logs/*
 bkup/*
+
+# Files that should be specifically included.
+!uut/README.md
