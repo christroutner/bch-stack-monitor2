@@ -26,12 +26,12 @@ function clearLogs () {
       1}-${now.getDate()}-${now.getHours()}-${now.getMinutes()}`
 
     // Backup the logs.
-    shell.mv(`${__dirname}/../html/logs`, `${__dirname}/../bkup/${datestamp}`)
+    shell.mv(`${__dirname}/../../html/logs`, `${__dirname}/../bkup/${datestamp}`)
 
-    shell.mkdir(`${__dirname}/../html/logs`)
-    shell.mkdir(`${__dirname}/../html/logs/bch-api`)
-    shell.mkdir(`${__dirname}/../html/logs/rest`)
-    shell.touch(`${__dirname}/../html/logs/bvt.txt`)
+    shell.mkdir(`${__dirname}/../../html/logs`)
+    shell.mkdir(`${__dirname}/../../html/logs/bch-api`)
+    shell.mkdir(`${__dirname}/../../html/logs/rest`)
+    shell.touch(`${__dirname}/../../html/logs/bvt.txt`)
   } catch (err) {
     console.log(`Error in clearLogs(): `, err)
   }
@@ -41,10 +41,10 @@ function clearLogs () {
 function log (str) {
   try {
     shell.cd(`${__dirname}`)
-    shell.exec(`echo "${str}" >> ${__dirname}/../html/logs/bvt.txt`)
+    shell.exec(`echo "${str}" >> ${__dirname}/../../html/logs/bvt.txt`)
   } catch (err) {
     console.log(`Error in utils.log(): `, err)
-    console.log(`Trying to access this file: ${__dirname}/../html/logs/bvt.txt`)
+    console.log(`Trying to access this file: ${__dirname}/../../html/logs/bvt.txt`)
   }
 }
 
@@ -63,7 +63,7 @@ async function collectGarbage () {
     shell.cd(`${__dirname}`)
 
     // dirList is an array of strings, of items in the bkup directory.
-    let dirList = shell.ls(`${__dirname}/../bkup`)
+    let dirList = shell.ls(`${__dirname}/../../bkup`)
 
     // Remove the README.md entry from the file list if it exists.
     dirList = dirList.filter(x => x.indexOf('README') === -1)
@@ -104,7 +104,7 @@ async function collectGarbage () {
     // Delete the older directories
     for (let i = 0; i < dirsToDelete.length; i++) {
       const thisDir = dirsToDelete[i].filename
-      shell.rm(`-rf`, `${__dirname}/../bkup/${thisDir}`)
+      shell.rm(`-rf`, `${__dirname}/../../bkup/${thisDir}`)
     }
   } catch (err) {
     console.log(`Error in util.js/collectGarbage(): `, err)

@@ -70,3 +70,4 @@ bkup/*
 
 # Files that should be specifically included.
 !uut/README.md
+!bkup/README.md

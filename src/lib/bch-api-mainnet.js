@@ -35,7 +35,7 @@ class Tests {
     try {
       shell.cd(`${__dirname}`)
       shell.exec(
-        `echo "${str}" >> ${__dirname}/../html/logs/bch-api/mainnet.txt`
+        `echo "${str}" >> ${__dirname}/../../html/logs/bch-api/mainnet.txt`
       )
     } catch (err) {
       console.log(`Error in bch-api-mainnet.js/localLog(): `)
