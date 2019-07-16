@@ -16,6 +16,9 @@ const adminLib = require('../src/lib/admin')
 const errorMiddleware = require('../src/middleware')
 const wlogger = require('../src/lib/wlogger')
 
+// Application specific libraries
+const testManager = require('./src/lib/test-manager')
+
 async function startServer () {
   // Create a Koa instance.
   const app = new Koa()
@@ -34,7 +37,10 @@ async function startServer () {
   app.use(errorMiddleware())
 
   // Used to generate the docs.
-  app.use(mount('/', serve(`${process.cwd()}/docs`)))
+  // app.use(mount('/', serve(`${process.cwd()}/docs`)))
+
+  // Mount the html output of the server.
+  app.use(mount('/', serve(`${process.cwd()}/html`)))
 
   // User Authentication
   require('../config/passport')
@@ -60,6 +66,9 @@ async function startServer () {
   // Create the system admin user.
   const success = await adminLib.createSystemUser()
   if (success) console.log(`System admin user created.`)
+
+  // Launch the tests.
+  testManager()
 
   return app
 }
