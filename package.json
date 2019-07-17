@@ -2,9 +2,9 @@
   "name": "bch-stack-monitor2",
   "version": "3.0.0",
   "description": "Tests the health status of a BCH stack.",
-  "main": "index.js",
+  "main": "bch-stack-monitor.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node bch-stack-monitor.js",
     "test": "npm run prep-test && BCHSTACK_ENV=test nyc --reporter=text --timeout 15000 ./node_modules/.bin/mocha --exit",
     "lint": "eslint src/**/*.js",
     "docs": "./node_modules/.bin/apidoc -i src/ -o docs",
