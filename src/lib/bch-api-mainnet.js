@@ -45,12 +45,19 @@ class Tests {
 
   async testSLP () {
     try {
-      // Spice token ID.
-      const tokenId = `4de69e374a8ed21cbddd47f2338cc0f479dc58daa2bbe11cd604ca488eca0ddf`
+      // testnet token ID SIM1
+      const tokenId = `46c437cb9675af9b84cf08d0cfb6d9c97c2a77fb08bda78d54a447a7edda2b58`
 
-      await bchjs.SLP.Utils.list(tokenId)
+      const result = await bchjs.SLP.Utils.list(tokenId)
 
       await utils.logAll(`SLP: PASSED`)
+
+      // Log the result.
+      this.localLog(` `)
+      this.localLog(`SLP: PASSED`)
+      this.localLog(
+        `testSLP for tokenId ${tokenId}: ${JSON.stringify(result, null, 2)}`
+      )
     } catch (err) {
       await utils.logAll(`SLP: FAILED`)
 
@@ -81,7 +88,7 @@ class Tests {
   // Test the Blockbook endpoints.
   async testBlockbook () {
     try {
-      const addr = 'bitcoincash:qz9dsscynjr5r33c5al9yd7rn842u8qaxyn3chpt0c'
+      const addr = 'bchtest:qpenrdn5mtxcpanpcvwpzqv70uar6r87rudyhpud0w'
       const result = await bchjs.Blockbook.balance(addr)
 
       await utils.logAll(`Blockbook: PASSED`)
@@ -103,7 +110,7 @@ class Tests {
 
   async testBitcore () {
     try {
-      const addr = 'bitcoincash:qz9dsscynjr5r33c5al9yd7rn842u8qaxyn3chpt0c'
+      const addr = 'bchtest:qpenrdn5mtxcpanpcvwpzqv70uar6r87rudyhpud0w'
       const result = await bchjs.Bitcore.balance(addr)
 
       await utils.logAll(`Bitore: PASSED`)
@@ -123,7 +130,7 @@ class Tests {
 
   async testInsight () {
     try {
-      const addr = 'bitcoincash:qz9dsscynjr5r33c5al9yd7rn842u8qaxyn3chpt0c'
+      const addr = 'bchtest:qpenrdn5mtxcpanpcvwpzqv70uar6r87rudyhpud0w'
       const result = await bchjs.Insight.Address.details(addr)
 
       await utils.logAll(`Insight: PASSED`)
