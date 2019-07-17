@@ -4,6 +4,6 @@
 */
 
 module.exports = {
-  port: process.env.PORT || 12401,
-  serverIP: `192.168.0.36`
+  port: process.env.PORT || 13401,
+  serverIP: `192.168.0.38`
 }

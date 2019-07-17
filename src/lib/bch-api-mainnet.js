@@ -13,7 +13,7 @@ const config = require('../../config')
 
 // Assumes mainnet
 const BCHJS = require('@chris.troutner/bch-js')
-const bchjs = new BCHJS({ restURL: `http://${config.serverIP}:12400/v3/` })
+const bchjs = new BCHJS({ restURL: `http://${config.serverIP}:13400/v3/` })
 
 class Tests {
   // constructor () {}

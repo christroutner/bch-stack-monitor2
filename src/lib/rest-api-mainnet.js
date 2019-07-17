@@ -13,10 +13,10 @@ const config = require('../../config')
 
 // Assumes mainnet
 const BITBOX = require('bitbox-sdk').BITBOX
-const bitbox = new BITBOX({ restURL: `http://${config.serverIP}:12500/v2/` })
+const bitbox = new BITBOX({ restURL: `http://${config.serverIP}:13500/v2/` })
 
 const SLPSDK = require('slp-sdk')
-const slpsdk = new SLPSDK({ restURL: `http://${config.serverIP}:12500/v2/` })
+const slpsdk = new SLPSDK({ restURL: `http://${config.serverIP}:13500/v2/` })
 
 const util = require('util')
 util.inspect.defaultOptions = { depth: 1 }
@@ -49,12 +49,19 @@ class Tests {
 
   async testSLP () {
     try {
-      // Spice token ID.
-      const tokenId = `4de69e374a8ed21cbddd47f2338cc0f479dc58daa2bbe11cd604ca488eca0ddf`
+      // testnet token ID SIM1
+      const tokenId = `46c437cb9675af9b84cf08d0cfb6d9c97c2a77fb08bda78d54a447a7edda2b58`
 
-      await slpsdk.Utils.list(tokenId)
+      const result = await slpsdk.Utils.list(tokenId)
 
       await utils.logAll(`SLP: PASSED`)
+
+      // Log the result.
+      this.localLog(` `)
+      this.localLog(`SLP: PASSED`)
+      this.localLog(
+        `testSLP for tokenId ${tokenId}: ${JSON.stringify(result, null, 2)}`
+      )
     } catch (err) {
       await utils.logAll(`SLP: FAILED`)
 
@@ -90,7 +97,7 @@ class Tests {
     try {
       // console.log(`bitbox: ${util.inspect(bitbox)}`)
 
-      const addr = 'bitcoincash:qz9dsscynjr5r33c5al9yd7rn842u8qaxyn3chpt0c'
+      const addr = 'bchtest:qpenrdn5mtxcpanpcvwpzqv70uar6r87rudyhpud0w'
       const result = await bitbox.Address.details(addr)
 
       await utils.logAll(`Insight: PASSED`)

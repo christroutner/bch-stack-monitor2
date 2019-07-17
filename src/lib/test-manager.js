@@ -41,7 +41,7 @@ async function runTests () {
     await utils.logAll(`bch-stack-monitor tests started at ${startTime.toLocaleString(TimeLanguage, { timeZone: TimeZone })}`)
 
     await utils.logAll(`bch-api tests:`)
-    await bchapi.runTests()
+    // await bchapi.runTests()
 
     await utils.logAll(` `)
 
