@@ -5,5 +5,5 @@
 
 module.exports = {
   port: process.env.PORT || 13401,
-  serverIP: `192.168.0.38`
+  serverIP: `172.17.0.1`
 }

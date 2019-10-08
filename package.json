@@ -31,10 +31,10 @@
   },
   "repository": "christroutner/bch-stack-monitor2",
   "dependencies": {
-    "@chris.troutner/bch-js": "^1.4.1",
+    "@chris.troutner/bch-js": "^1.6.1",
     "apidoc": "^0.17.7",
     "bcryptjs": "^2.4.3",
-    "bitbox-sdk": "^8.4.2",
+    "bitbox-sdk": "^8.10.1",
     "glob": "^7.0.0",
     "jsonwebtoken": "^8.3.0",
     "kcors": "^2.2.1",
