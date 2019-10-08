@@ -67,7 +67,7 @@ class Tests {
     try {
       // console.log(`bitbox: ${util.inspect(bitbox)}`);
 
-      const result = await bitbox.Control.getInfo()
+      const result = await bitbox.Control.getNetworkInfo()
       // console.log(`getInfo: ${JSON.stringify(result, null, 2)}`);
 
       await utils.logAll(`Full node: PASSED`)
